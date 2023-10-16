@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	unsigned long int i;
 	int count = 0;
 	va_list list;
+
 	format_t form[] = {
 		{'c', print_char},
 		{'s', print_string},
