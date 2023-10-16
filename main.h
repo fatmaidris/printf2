@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
 
 /**
  * struct format - structure for specifires (special) and
@@ -25,5 +26,7 @@ int _putchar(char c);
 void print_char(va_list list, int *count);
 void print_string(va_list list, int *count);
 void print_percent(va_list list, int *count);
+int print_int(va_list args);
+int print_dec(va_list args);
 
 #endif
