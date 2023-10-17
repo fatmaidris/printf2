@@ -8,25 +8,38 @@
 #include <limits.h>
 
 /**
- * struct format - structure for specifires (special) and
- * functio pointer to call the helper functions.
- * @special: format character
- * @call: func ptr
+ * struct format - structure for specifires (id) and
+ * function pointer to call the helper functions.
+ * @id: format character
+ * @w: func ptr
 */
 
 typedef struct format
 {
-	char special;
-	void (*call)(va_list, int *);
+	char *id;
+	int (*w)();
 } format_t;
 
-
-int _printf(const char *format, ...);
 int _putchar(char c);
-void print_char(va_list list, int *count);
-void print_string(va_list list, int *count);
-void print_percent(va_list list, int *count);
+int _printf(const char *format, ...);
+int print_char(va_list val);
+int printf_string(va_list val);
+int _strlenc(const char *str);
+int _strlen(char *str);
+int print_37(void);
 int print_int(va_list args);
 int print_dec(va_list args);
+int print_binary(va_list val);
+int print_unsigned(va_list args);
+int print_octal(va_list val);
+int print_x(va_list val);
+int print_X(va_list val);
+int print_X_ext(unsigned int num);
+int print_str(va_list val);
+int print_x_ext(unsigned long int num);
+int print_pointers(va_list val);
+int print_rev(va_list val);
+int print_rot(va_list val);
+
 
 #endif
